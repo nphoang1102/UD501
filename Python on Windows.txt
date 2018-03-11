@@ -1,0 +1,6 @@
+- Install the latest version of Python 3 from https://www.python.org/
+- Add the python path to the system variable, follow this guide from StackOverflow https://stackoverflow.com/questions/7054424/python-not-recognised-as-a-command#7054429
+- Now python can be run from Command Prompt with python (similar to Linux)
+- To install a new python package, use "python -m pip install XXX" (https://stackoverflow.com/questions/7054424/python-not-recognised-as-a-command#7054429)
+- Sublime text editor masterrace, run Python in terminal materrace!!!
+- Command prompt color config: background (27,95,117), white text
