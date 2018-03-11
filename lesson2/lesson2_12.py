@@ -2,6 +2,7 @@
 
 import os
 import pandas as pd
+import matplotlib.pyplot as plt
 
 def symbol_to_path(symbol, base_dir="../data"):
     """Return CSV file path given ticker symbol."""
@@ -24,18 +25,25 @@ def get_data(symbols, dates):
 
     return df
 
+def plot_data(df, title="Stock prices", xlabel="Date", ylabel="Price"):
+    """ Plot the stock price """
+    ax = df.plot(title=title, fontsize=8)
+    ax.set_xlabel(xlabel)
+    ax.set_ylabel(ylabel)
+    plt.grid() # display the grid line
+    plt.show() # display the plot
 
 def test_run():
     # Define a date range
-    dates = pd.date_range('2010-01-22', '2010-01-26')
+    dates = pd.date_range('2010-01-01', '2010-12-31')
 
     # Choose stock symbols to read
     symbols = ['GOOG', 'IBM', 'GLD']
 
-    # Get stock data
+    # Get stock data, with ix slicing for more refined data
     df = get_data(symbols, dates)
-    print(df)
-
+    print(df.ix['2010-02-01' : '2010-03-01', ['IBM', 'GLD']])
+    plot_data(df)
 
 if __name__ == "__main__":
     test_run()
